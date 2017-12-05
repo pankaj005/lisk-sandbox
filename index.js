@@ -104,6 +104,7 @@ Sandbox.prototype.run = function () {
 		params.unshift("--debug=" + debugPort);
 		console.log("DebugPort " + params[1] + " : " + debugPort++);
 	}
+	params.push(this.id);
 	this.child = spawn(path.join(__dirname, "../../nodejs/node"), params, {
 		stdio: ['pipe', 'pipe', 'pipe', 'pipe', 'pipe']
 	});
